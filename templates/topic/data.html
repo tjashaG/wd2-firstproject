@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} {{ topic.title }} {% endblock %}
+
+{% block main %}
+    <h1>{{ topic.title }}</h1>
+    <h6>Posted by <strong>{{ topic.author.username }}</strong> on {{ topic.created_at.strftime('%d %b %Y') }}</h6>
+    <p>{{ topic.text }}</p>
+
+    {% if user.id == topic.author.id %}
+    <p>
+        <a class="btn btn-info" href="/topic/{{ topic.id }}/edit" role="button">Edit</a>
+        <a class="btn btn-danger" href="/topic/{{ topic.id }}/delete" role="button">Delete!</a>
+        <div style="color: red;" class="form-text">Once you click delete, there's no going back!</div>
+    </p>
+    {% endif %}
+
+{% endblock %}

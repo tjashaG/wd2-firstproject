@@ -1,0 +1,30 @@
+body {
+    margin: auto;
+    background-color: #f7ebf7;
+}
+
+.title {
+    color: white;
+    background-color: #6703fc;
+    height: 100px;
+    text-align: center;
+    padding-top: 30px;
+    }
+
+h1:hover {
+    font-weight: bold;
+}
+
+form {
+    width: 70%;
+    margin: 10px
+}
+
+.submit {
+    margin: 5px;
+}
+
+.item {
+
+}
+

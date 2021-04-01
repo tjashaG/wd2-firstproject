@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block main %}
+<p>
+    <a href="/create-topic">Create New Topic</a> | <a href="/logout">Logout</a>
+</p>
+
+<h3>Hello {{ user.username }}</h3>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Topic</th>
+      <th scope="col">Author</th>
+      <th scope="col">Date Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for topic in topics %}
+    <tr>
+        <td><a href="/topic/{{ topic.id }}">{{ topic.title }}</a></td>
+        <td>{{ topic.author.username }}</td>
+        <td>{{ topic.created_at.strftime('%d %B %Y') }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% for topic in topics %}
+
+{% endfor %}
+
+{% endblock %}
