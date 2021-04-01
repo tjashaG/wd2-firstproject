@@ -142,7 +142,3 @@ def logout():
     response.set_cookie("session_token", expires=0)
     # response.delete_cookie("session_token")
     return response
-
-
-if __name__ == "__main__":
-    app.run()
